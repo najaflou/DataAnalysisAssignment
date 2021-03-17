@@ -15,3 +15,6 @@ for cntry in CountryList:
     CountryMinValue= (df2[df2.country ==cntry]).min()["daily_vaccinations"]
     Tempdf= (df2[df2.country ==cntry]).fillna(CountryMinValue)
     Finaldf=Finaldf.append(Tempdf)
+    
+#Checking if any row has skipped(This could happen if a country does not have any valid vaccination number
+Finaldf['daily_vaccinations'] = Finaldf['daily_vaccinations'].fillna(0)
