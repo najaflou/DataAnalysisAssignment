@@ -15,6 +15,7 @@ for cntry in CountryList:
     CountryMinValue= (df2[df2.country ==cntry]).min()["daily_vaccinations"]
     Tempdf= (df2[df2.country ==cntry]).fillna(CountryMinValue)
     Finaldf=Finaldf.append(Tempdf)
+#*****************************up to here is from previous assignment to get cleaned data***************
 
 #will groupby countries and find their means, then will show top 3 with highest mean
 Finaldf.groupby("country").daily_vaccinations.mean().nlargest(3)
