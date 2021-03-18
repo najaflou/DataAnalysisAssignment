@@ -34,6 +34,6 @@ Also for countries which dont have any observation we will add "0"*/
 
 /* We will save the final result in a new column called "Final_daily_vaccination" */
 
-SELECT country_median, daily_vaccination, COALESCE(daily_vaccination,country_median,0) as Final_daily_vaccination
+SELECT country_median, daily_vaccination,COALESCE(daily_vaccination,country_median,0) AS Final_daily_vaccination
 FROM country_vaccination_stats2
 WHERE daily_vaccination IS NULL
